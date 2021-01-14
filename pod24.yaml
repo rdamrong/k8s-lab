@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod24
+spec:
+  affinity:
+    nodeAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        nodeSelectorTerms:
+        - matchExpressions:
+          - key: perf
+            operator: In
+            values:
+            - high
+            - medium
+  containers:
+  - name: service9090
+    image: damrongsak/hello:9090
+    imagePullPolicy: IfNotPresent
