@@ -1,0 +1,30 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod9
+spec:
+  containers:
+  - image: busybox
+    name: test-container
+    command:
+        -  "/bin/sh"
+        -  "-c"
+        -  "while true; do echo \"log \"`date`; sleep 5; done >> /shared/app.log"
+    imagePullPolicy: IfNotPresent
+    volumeMounts:
+    - mountPath: /shared
+      name: shared-volume
+  - image: busybox
+    name: display-container
+    command:
+        -  "/bin/sh"
+        -  "-c"
+        -  "while true; do echo \"Display Data\"; cat /data/app.log; sleep 15; done"
+    imagePullPolicy: IfNotPresent
+    volumeMounts:
+    - mountPath: /data
+      name: shared-volume
+  volumes:
+  - name: shared-volume
+    emptyDir: {}
+

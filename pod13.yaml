@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod13
+spec:
+  containers:
+    - name: test-container
+      image: busybox
+      command: ["sh","-c", "echo $SERVER"]
+      imagePullPolicy: IfNotPresent
+      env:
+        - name: SERVER
+          valueFrom:
+            configMapKeyRef:
+              name: app-info
+              key: server
+

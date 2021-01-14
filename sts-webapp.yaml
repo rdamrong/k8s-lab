@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: sts-webapp
+spec:
+  selector:
+    matchLabels:
+      app: nginx
+  serviceName: "myservice"
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      terminationGracePeriodSeconds: 10
+      containers:
+      - name: nginx
+        image: nginx
+        ports:
+        - containerPort: 80
+          name: web
+        volumeMounts:
+        - name: volapp
+          mountPath: /usr/share/nginx/html
+  volumeClaimTemplates:
+  - metadata:
+      name: volapp
+    spec:
+      accessModes: [ "ReadWriteOnce" ]
+      storageClassName: "mystorage"
+      resources:
+        requests:
+          storage: 1Gi
+

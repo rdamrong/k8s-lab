@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod23
+spec:
+  containers:
+  - name: service9090
+    image: damrongsak/hello:9090
+    imagePullPolicy: IfNotPresent
+  nodeSelector:
+    perf: high
+

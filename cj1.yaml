@@ -1,0 +1,16 @@
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: cj1
+spec:
+  schedule: "*/2 * * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: cfac
+            image: damrongsak/factorial:job
+            imagePullPolicy: IfNotPresent
+          restartPolicy: OnFailure
+

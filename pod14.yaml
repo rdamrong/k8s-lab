@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod14
+spec:
+  containers:
+    - name: test-container
+      image: busybox
+      command:
+        -  "/bin/sh"
+        -  "-c"
+        -  "ls /etc/config/;cat /etc/config/user.config"
+      volumeMounts:
+      - name: config-volume
+        mountPath: /etc/config
+  volumes:
+    - name: config-volume
+      configMap:
+        name: myconfig
+

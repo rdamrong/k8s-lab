@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: app-info
+data:
+    user: "root"
+    server: "server.example.com"
+    port: "8899"
+

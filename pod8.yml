@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+   name: pod8
+   namespace: student0
+spec:
+  containers:
+    - name: container8
+      image: nginx
+      imagePullPolicy: IfNotPresent
+

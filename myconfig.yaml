@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: myconfig
+data:
+  user.config: |
+    userName: damrongsak
+    group: Administrator
+    class: Kubernetes
+

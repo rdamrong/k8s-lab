@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+   name: pod4
+   labels:
+     run: hello
+spec:
+  containers:
+    - name: container4
+      image: nginx
+      imagePullPolicy: IfNotPresent

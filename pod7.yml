@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+   name: pod7
+spec:
+  containers:
+    - name: container7
+      image: nginx
+      command: ["printenv"]
+      args:
+        - "HOSTNAME"
+        - "KUBERNETES_PORT"
+      imagePullPolicy: IfNotPresent
+  restartPolicy: OnFailure
+

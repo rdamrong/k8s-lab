@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deploy1
+spec:
+  replicas: 3
+  selector:
+     matchLabels:
+       run: hello
+  template:
+     metadata:
+       name: myhello
+       labels:
+         run: hello
+     spec:
+        containers:
+          - name: myhello
+            image: nginx
+            imagePullPolicy: IfNotPresent
+

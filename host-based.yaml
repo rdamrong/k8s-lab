@@ -1,0 +1,22 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+   name: hostbased-ingress
+spec:
+   ingressClassName: nginx
+   rules:
+    -  host: tea.example.com
+       http:
+        paths:
+         - path: /
+           backend:
+             serviceName: tea-svc
+             servicePort: 80
+    -  host: coffee.example.com
+       http:
+        paths:
+         - path: /
+           backend:
+             serviceName: coffee-svc
+             servicePort: 80
+

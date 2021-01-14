@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    app: app
+  name: server1
+spec:
+  hostname: server1
+  subdomain: app
+  containers:
+  - image: nginxdemos/nginx-hello:plain-text
+    name: server1
+    imagePullPolicy: IfNotPresent
+

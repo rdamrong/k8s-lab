@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: dms1
+spec:
+  selector:
+    matchLabels:
+      run: hello
+  template:
+    metadata:
+      name: myhello
+      labels:
+         run: hello
+    spec:
+      containers:
+        - name: myhello
+          image: nginx
+          imagePullPolicy: IfNotPresent
+
