@@ -16,3 +16,4 @@ spec:
   nfs:
     path: /data/student0/storage11
     server: nfs.d8k.io
+

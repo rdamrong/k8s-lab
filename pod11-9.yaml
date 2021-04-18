@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    scenario: liveness
+  name: pod11-9
+spec:
+  containers:
+  - image: damrongsak/d8k-app:max30
+    name: pod11-9
+    livenessProbe:
+       httpGet:
+         path: /healthz
+         port: 4000
+       failureThreshold: 2
+       periodSeconds: 2
+

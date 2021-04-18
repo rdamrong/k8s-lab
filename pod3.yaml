@@ -7,3 +7,4 @@ spec:
     - name: pod3
       image: nginx
       imagePullPolicy: IfNotPresent
+

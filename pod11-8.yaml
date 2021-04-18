@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod11-8
+spec:
+  containers:
+  - image: damrongsak/d8k-cstate
+    name: cstate-pod
+    lifecycle:
+     postStart:
+       exec:
+          command: ["/bin/sh", "-c", "/code/postStart.sh "]
+     preStop:
+       exec:
+          command: ["/bin/sh", "-c", "/code/preStop.sh "]
+

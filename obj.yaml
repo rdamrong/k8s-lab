@@ -1,0 +1,7 @@
+apiVersion: d8k.io/v1
+kind: MyResources
+metadata:
+  name: mr1
+spec:
+   replicas: 5
+

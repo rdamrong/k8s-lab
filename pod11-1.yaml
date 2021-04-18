@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod11-1
+spec:
+  initContainers:
+  - image: busybox
+    name: bbox
+    command: ["abcd"]
+  containers:
+  - image: damrongsak/hello:8080
+    name: hello8080
+

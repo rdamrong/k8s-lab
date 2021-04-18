@@ -1,3 +1,5 @@
+#!/bin/sh
+
 cat > user1-csr.yaml <<EOF
 apiVersion: certificates.k8s.io/v1
 kind: CertificateSigningRequest
@@ -11,3 +13,4 @@ spec:
   usages:
   - client auth
 EOF
+
