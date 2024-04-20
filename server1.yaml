@@ -8,7 +8,7 @@ spec:
   hostname: server1
   subdomain: app
   containers:
-  - image: nginxdemos/nginx-hello:plain-text
+  - image: damrongsak/hello:8080
     name: server1
     imagePullPolicy: IfNotPresent
 

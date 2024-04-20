@@ -9,7 +9,7 @@ spec:
       command:
         -  "/bin/sh"
         -  "-c"
-        -  "ls /etc/config/;cat /etc/config/user.config"
+        -  "ls /etc/config/;echo;cat /etc/config/user.config"
       volumeMounts:
       - name: config-volume
         mountPath: /etc/config

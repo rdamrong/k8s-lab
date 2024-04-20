@@ -1,22 +1,28 @@
-apiVersion: extensions/v1beta1
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
    name: hostbased-ingress
 spec:
    ingressClassName: nginx
    rules:
-    -  host: tea.example.com
+    -  host: tea0.d8k.io
        http:
         paths:
          - path: /
+           pathType: Prefix
            backend:
-             serviceName: tea-svc
-             servicePort: 80
-    -  host: coffee.example.com
+             service:
+               name: tea-svc
+               port:
+                 number: 80
+    -  host: coffee0.d8k.io
        http:
         paths:
          - path: /
+           pathType: Prefix
            backend:
-             serviceName: coffee-svc
-             servicePort: 80
+             service:
+               name: tea-svc
+               port:
+                 number: 80
 

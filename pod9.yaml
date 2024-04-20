@@ -9,7 +9,7 @@ spec:
     command:
         -  "/bin/sh"
         -  "-c"
-        -  "while true; do echo \"log \"`date`; sleep 5; done >> /shared/app.log"
+        -  'while true; do echo "log "$(date); sleep 5; done >> /shared/app.log'
     imagePullPolicy: IfNotPresent
     volumeMounts:
     - mountPath: /shared

@@ -7,8 +7,8 @@ spec:
     - name: container6
       image: centos:8
       command:
-        - "sh"
-        - "-c"
-        - "while true; do echo \"log [at] \"`date`; sleep 7; done"
+        - 'sh'
+        - '-c'
+        - 'while true; do echo "log [at] "$(date); sleep 7; done'
       imagePullPolicy: IfNotPresent
 
