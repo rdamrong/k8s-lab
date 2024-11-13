@@ -22,7 +22,7 @@ spec:
            pathType: Prefix
            backend:
              service:
-               name: tea-svc
+               name: coffee-svc
                port:
                  number: 80
 
